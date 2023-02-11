@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import IMCForm from "./components/IMCForm";
 function App() {
+  const guardar = () => {
+    console.log("guardar datos");
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="principal">
+        <h1>Calculadora IMC</h1>
+        <p>(indice de masa corporal)</p>
+        <IMCForm />
+      </div>
     </div>
   );
 }

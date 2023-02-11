@@ -1,0 +1,19 @@
+.contenedor-imc{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.calcular{
+    padding: 1em 1.6em;
+    background-color: rgb(42, 51, 170);
+    font-size: 1rem;
+    color: aliceblue;
+    border: none;
+    border-radius: .5em;
+    margin-top: 1.4em;
+    margin-bottom: 1em;
+    cursor: pointer;
+    user-select: none;
+  }
+  
