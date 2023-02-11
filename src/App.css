@@ -12,10 +12,18 @@
   align-items: center;
   background-color: rgb(185, 230, 183);
 }
+.text{
+  margin-bottom: 1em;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
 .principal{
   min-height: 400px;
-  min-width: 300px;
-  padding: 1em 2em;
+  min-width: 350px;
+  padding: 1.5em .5em;
+  border: 5px solid aliceblue;
   border-radius: .7em;
   color: aliceblue;
   background-color: rgb(131, 185, 128);

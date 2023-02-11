@@ -1,19 +1,37 @@
 .contenedor-imc{
     display: flex;
-    flex-flow: column;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
-.calcular{
-    padding: 1em 1.6em;
-    background-color: rgb(42, 51, 170);
+form input{
+    margin: .5em 1em;
+    padding: .8em;
+    font-size: 1rem;
+    border-radius: .5em;
+    border: none;
+}
+.botones{
+    width: 100%;
+    padding: 1em 0;
     font-size: 1rem;
     color: aliceblue;
-    border: none;
+    border: 2px solid rgb(240, 240, 240);
     border-radius: .5em;
-    margin-top: 1.4em;
-    margin-bottom: 1em;
+    
     cursor: pointer;
     user-select: none;
   }
+.calcular{
+    background-color: rgb(36, 208, 90);
+    margin-bottom: .8em;
+}
+.reiniciar{
+    background-color: rgb(203, 43, 43);
+}
+.btn{
+    margin-top: 1.8em;
+    margin-bottom: 1em;
+}
   

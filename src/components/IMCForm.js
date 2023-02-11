@@ -2,53 +2,64 @@ import React from "react";
 import { useState } from "react";
 import "../stylesheet/IMCForm.css";
 
-const valores_iniciales = {
-  peso: "",
-  altura: "",
-  dia: "",
-  hora: "",
-  key: "",
-};
-
 const IMCForm = () => {
-  const [input, setInput] = useState(valores_iniciales);
+  const [peso, setPeso] = useState(0);
+  const [altura, setAltura] = useState(0);
+  const [bmi, setBmi] = useState("");
+  // const [mensaje, setMensaje] = useState("");
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    e.preventDefault();
+    if (peso === "" || altura === "") {
+      alert("Por favor ingrese un valor");
+    } else {
+      let bmi = peso / (altura * altura);
+      setBmi(bmi.toFixed(2));
+    }
   };
-  //   const handleSubmit = () => {};
+
+  const reiniciar = () => {
+    /* setPeso(0);
+    setAltura(0);
+    setBmi(0); */
+    window.location.reload();
+  };
   return (
     <div className="contenedor-imc">
-      <div className="cont-peso">
-        <label htmlFor="peso">Peso</label>
-        <input
-          id="peso"
-          type={"number"}
-          min={"1"}
-          max={"500"}
-          placeholder="Ingrese su peso"
-          onClick={handleChange}
-        />
-      </div>
-      <div className="cont-altura">
-        <label htmlFor="altura">Altura</label>
-        <input
-          id="altura"
-          type={"number"}
-          min={"1"}
-          max={"300"}
-          placeholder="Ingrese su altura"
-          onClick={handleChange}
-        />
-      </div>
-      <div className="btn">
-        <button
-          className="calcular"
-          disabled={input.peso === "" || input.altura === ""}
-        >
-          Calcular IMC
-        </button>
-      </div>
+      <form onSubmit={handleChange}>
+        <div className="cont-peso">
+          <label htmlFor="peso">Peso</label>
+          <input
+            id="peso"
+            type={"number"}
+            min={"1"}
+            max={"500"}
+            placeholder="Kg"
+            onChange={(e) => setPeso(e.target.value)}
+          />
+        </div>
+        <div className="cont-altura">
+          <label htmlFor="altura">Altura</label>
+          <input
+            id="altura"
+            type={"number"}
+            step="any"
+            min={"1"}
+            max={"300"}
+            placeholder="M"
+            onChange={(e) => setAltura(e.target.value)}
+          />
+        </div>
+        <div className="btn">
+          <button type="submit" className="botones calcular">
+            Calcular IMC
+          </button>
+          <button className="botones reiniciar" onClick={reiniciar}>
+            Reiniciar
+          </button>
+        </div>
+        <p>Tu IMC es {bmi}</p>
+      </form>
     </div>
   );
 };
